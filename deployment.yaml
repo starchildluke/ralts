@@ -10,7 +10,7 @@ command:
 repositories:
   mountPath: /opt/repos
   repositories:
-    - url: https://github.com/lukedavisseo/ralts
+    - url: https://github.com/starchildluke/ralts
       name: ralts
       ref: main
 resources:
