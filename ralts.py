@@ -217,14 +217,14 @@ def data_viz():
 		df_ent = pd.DataFrame(ent_dict)
 		df_ent = df_ent.drop(columns=['Page URL'])
 		grouped_df_ent = df_ent.groupby(['Entity']).agg({'Relevance Score': ['mean'], 'Wikidata URI': ['max']}).round(3)
-		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Entities')
 		st.dataframe(grouped_df_ent)
 
 		df_topic = pd.DataFrame(topics_dict)
 		df_topic = df_topic.drop(columns=['Page URL'])
 		grouped_df_topic = df_topic.groupby(['Topic']).agg({'Relevance Score': ['mean']}).round(3)
-		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Topics')
 		st.dataframe(grouped_df_topic)
 
@@ -238,13 +238,13 @@ def data_viz():
 
 		df_ent = pd.DataFrame(ent_dict)
 		grouped_df_ent = df_ent.groupby(['Entity']).agg({'Relevance Score': ['mean'], 'Wikidata URI': ['max']}).round(3)
-		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Entities')
 		st.dataframe(grouped_df_ent)
 
 		df_topic = pd.DataFrame(topics_dict)
 		grouped_df_topic = df_topic.groupby(['Topic']).agg({'Relevance Score': ['mean']}).round(3)
-		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Topics')
 		st.dataframe(grouped_df_topic)
 
@@ -258,7 +258,7 @@ def data_viz():
 
 		df_ent = pd.DataFrame(ent_dict)
 		grouped_df_ent = df_ent.groupby(['Entity', 'Page URL']).agg({'Relevance Score': ['mean'], 'Wikidata URI': ['max']}).round(3)
-		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_ent = grouped_df_ent.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Entities')
 		st.dataframe(grouped_df_ent)
 		
@@ -267,7 +267,7 @@ def data_viz():
 
 		df_topic = pd.DataFrame(topics_dict)
 		grouped_df_topic = df_topic.groupby(['Topic',  'Page URL']).agg({'Relevance Score': ['mean'], 'Page URL': ['max']}).round(3)
-		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'max'), ascending=False)
+		grouped_df_topic = grouped_df_topic.reset_index().sort_values(by=('Relevance Score', 'mean'), ascending=False)
 		st.header('Topics')
 		st.dataframe(grouped_df_topic)
 
