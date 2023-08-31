@@ -133,8 +133,6 @@ elif input_type == 'Multiple URLs':
 	multi_url = st.text_area('Enter keywords, 1 per line')
 	json_filename = st.text_input('Enter filename for JSON exports')
 
-list_of_blogs = st.radio("Select the corresponding blog", blogs)
-
 classifier_checkbox = st.checkbox('Click this checkbox to turn off the NLP classifier')
 submit = st.button('Submit')
 
